@@ -1,69 +1,87 @@
-# React + TypeScript + Vite
+# The NYT News
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern web app to search and explore articles from The New York Times, built with React, TypeScript, Vite, Tailwind CSS, and React Query.
 
-Currently, two official plugins are available:
+## Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**The NYT News** allows users to search, sort, and browse articles from The New York Times. It features fast search, beautiful UI, and responsive design.
 
-## Expanding the ESLint configuration
+## Features
+- Search articles from The New York Times
+- Sort by best, newest, oldest, or relevance
+- Pagination for browsing results
+- Responsive and mobile-friendly UI
+- Loading skeletons and error handling
+- Powered by React Query for fast data fetching and caching
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Tech Stack
+- [React 19](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [@tanstack/react-query](https://tanstack.com/query/latest)
+- [Axios](https://axios-http.com/)
+- [React Router v7](https://reactrouter.com/)
+- [Vitest](https://vitest.dev/) & [Testing Library](https://testing-library.com/)
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Getting Started
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+1. **Clone the repository:**
+   ```bash
+   git clone <repo-url>
+   cd the-nyt-news
+   ```
+2. **Install dependencies:**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+3. **Set up environment variables:**
+   - Copy `.env.example` to `.env` and fill in your NYT API key and base URL.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+4. **Run the development server:**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+   The app will be available at [http://localhost:5173](http://localhost:5173)
+
+## Running Tests
+
+This project uses [Vitest](https://vitest.dev/) and [@testing-library/react](https://testing-library.com/docs/react-testing-library/intro/) for functional testing.
+
+To run all tests:
+```bash
+npm test
+# or
+npx vitest run
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Folder Structure
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
 ```
+the-nyt-news/
+├── public/              # Static assets
+├── src/
+│   ├── assets/          # Images, SVGs, etc
+│   ├── components/      # Reusable React components
+│   ├── hooks/           # Custom React hooks
+│   ├── layouts/         # Layout components
+│   ├── lib/             # API wrappers
+│   ├── pages/           # Page components (Home, Search)
+│   ├── routes/          # App routing
+│   ├── services/        # Data fetching logic
+│   ├── types/           # TypeScript types
+│   ├── utils/           # Utility functions
+│   └── __test__/        # Functional tests & setup
+├── package.json         # Project metadata & scripts
+├── tailwind.config.ts   # Tailwind CSS config
+├── vite.config.ts       # Vite config
+└── ...
+```
+
+## License
+
+MIT
