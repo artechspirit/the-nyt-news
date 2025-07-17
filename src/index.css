@@ -1,1 +1,6 @@
 @import 'tailwindcss';
+@config '../tailwind.config.ts';
+
+body {
+  @apply font-body text-nyt-black  leading-relaxed;
+}

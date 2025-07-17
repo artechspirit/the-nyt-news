@@ -1,19 +1,30 @@
-import { useNavigate } from 'react-router-dom';
+import ilustration from '../assets/ilustration.svg';
 
 export default function Home() {
-  const navigate = useNavigate();
-
   return (
-    <div className="text-center mt-10">
-      <h2 className="text-2xl font-semibold mb-4">
-        Welcome to NYT Article Search
-      </h2>
-      <button
-        className="px-4 py-2 bg-black text-white rounded hover:bg-gray-800"
-        onClick={() => navigate('/search')}
-      >
-        Start Searching
-      </button>
-    </div>
+    <section className=" bg-white pt-4 flex items-center justify-center">
+      <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-4">
+        {/* Left Side – Text */}
+        <div className="text-center lg:text-left">
+          <h1 className="text-5xl md:text-7xl font-bold font-body md:mb-8 text-nyt-black">
+            Discover News from The New York Times
+          </h1>
+          <p className="text-gray-600 text-lg sm:text-xl mb-8">
+            Search the most influential articles from The New York Times. Fast,
+            beautiful, and powered by React.
+          </p>
+        </div>
+
+        {/* Right Side – Illustration */}
+        <div className="flex justify-center md:justify-end">
+          <img
+            src={ilustration}
+            alt="Illustration"
+            draggable={false}
+            className="w-full max-w-[80%] md:mx-auto md:-mt-28 h-auto"
+          />
+        </div>
+      </div>
+    </section>
   );
 }

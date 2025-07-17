@@ -14,17 +14,10 @@ export default tseslint.config([
       tseslint.configs.recommended,
       reactHooks.configs['recommended-latest'],
       reactRefresh.configs.vite,
-      'plugin:react/recommended',
-      'plugin:jsx-a11y/recommended',
-      'prettier',
     ],
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
-    },
-    plugins: ['react', 'jsx/a11y'],
-    rules: {
-      'react/react-in-jsx-scope': 'off',
     },
   },
 ]);
