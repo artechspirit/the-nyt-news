@@ -4,3 +4,7 @@
 body {
   @apply font-body text-nyt-black  leading-relaxed;
 }
+
+.article-card:hover h2 {
+  @apply underline;
+}
