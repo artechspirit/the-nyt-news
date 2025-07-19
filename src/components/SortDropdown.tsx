@@ -6,7 +6,11 @@ interface SortDropdownProps {
 export const SortDropdown = ({ sort, onChange }: SortDropdownProps) => {
   return (
     <div className="my-4 flex justify-end">
+      <label htmlFor="sort" className="sr-only">
+        Sort articles
+      </label>
       <select
+        id="sort"
         value={sort}
         onChange={(e) => onChange(e.target.value)}
         className="border px-2 py-1 rounded"

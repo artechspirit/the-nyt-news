@@ -7,10 +7,10 @@ export default function SearchInput() {
   const location = useLocation();
   const [searchParams] = useSearchParams();
   const inputRef = useRef<HTMLInputElement>(null);
-  
+
   const initialQuery = searchParams.get('q') || '';
   const [query, setQuery] = useState(initialQuery);
-  
+
   // Autofocus on mount
   useEffect(() => {
     inputRef.current?.focus();
@@ -25,12 +25,12 @@ export default function SearchInput() {
   const handleSearch = () => {
     navigate(`/search?q=${encodeURIComponent(query)}`);
     inputRef.current?.blur();
-  }
+  };
 
   // Handle Enter key for instant search
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter' && query.length > 0) {
-      handleSearch()
+      handleSearch();
     }
   };
 
@@ -62,12 +62,16 @@ export default function SearchInput() {
           type="button"
           aria-label="Clear search"
           onClick={handleClear}
-          className="absolute right-10 top-2.5 text-gray-400 hover:text-black focus:outline-none cursor-pointer"
+          className="absolute right-10 flex justify-end items-center top-0 w-12 h-12 text-gray-400 hover:text-black focus:outline-none cursor-pointer"
         >
-          <X size={20} />
+          <X size={20} className="-mt-1.5" />
         </button>
       )}
-      <Search className="text-nyt-black absolute right-3 top-2.5 cursor-pointer" size={24} onClick={handleSearch} />
+      <Search
+        className="text-nyt-black absolute right-3 top-2.5 cursor-pointer"
+        size={24}
+        onClick={handleSearch}
+      />
     </div>
   );
 }
