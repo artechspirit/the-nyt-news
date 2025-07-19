@@ -20,7 +20,6 @@ export const Pagination = ({ currentPage, onPageChange }: PaginationProps) => {
 
       <button
         aria-label="Next page"
-        disabled={currentPage === 0}
         onClick={() => onPageChange(currentPage + 1)}
         className="px-3 py-1  disabled:opacity-50 cursor-pointer  fixed top-1/2 right-0 transform -translate-y-1/2 hidden lg:block"
       >
