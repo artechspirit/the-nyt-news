@@ -1,9 +1,6 @@
 {
-  "redirects": [],
-  "headers": [],
-  "cleanUrls": true,
   "rewrites": [
-    { "source": "/robots.txt", "destination": "/robots.txt" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/(.*)", "destination": "/index.html" },
+    { "source": "/robots.txt", "destination": "/robots.txt" }
   ]
 }
