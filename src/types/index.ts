@@ -1,27 +1,27 @@
-type Keyword = {
+export type Keyword = {
   name: string;
   value: string;
   rank: number;
 };
 
-type MultimediaFormat = {
+export type MultimediaFormat = {
   url: string;
   height: number;
   width: number;
 };
 
-type Multimedia = {
+export type Multimedia = {
   caption: string;
   credit: string;
   default: MultimediaFormat;
   thumbnail: MultimediaFormat;
 };
 
-type Byline = {
+export type Byline = {
   original: string;
 };
 
-type Headline = {
+export type Headline = {
   main: string;
   kicker: string;
   print_headline: string;

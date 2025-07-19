@@ -26,7 +26,7 @@ export default function Search() {
 
   return (
     <>
-      <div className="flex justify-between flex-row items-center">
+      <div className="flex justify-between flex-row items-center mb-1.5">
         <h2 className="text-xl font-semibold">Search Results for "{q}"</h2>
         <SortDropdown
           sort={sort}
@@ -55,6 +55,7 @@ export default function Search() {
                 date={article.pub_date}
                 web_url={article.web_url}
                 isLast={index === data.length - 1}
+                multimedia={article.multimedia}
               />
             ))}
       </div>
