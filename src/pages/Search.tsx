@@ -5,13 +5,14 @@ import { ArticleCardSkeleton } from '../components/ArticleCardSkeleton';
 import { ArticleCard } from '../components/ArticleCard';
 import { SortDropdown } from '../components/SortDropdown';
 import { Pagination } from '../components/Pagination';
+import { getValidSortParam } from '../utils';
 
 export default function Search() {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const q = searchParams.get('q') || '';
   const page = parseInt(searchParams.get('page') || '0');
-  const sort = searchParams.get('sort') || 'newest';
+  const sort = getValidSortParam(searchParams.get('sort'));
   const { data, isLoading, isError } = useArticlesQuery({
     q,
     page,

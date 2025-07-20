@@ -27,9 +27,11 @@ export type Headline = {
   print_headline: string;
 };
 
+export type SortType = 'best' | 'newest' | 'oldest' | 'relevance';
+
 export type Params = {
   q?: string;
-  sort?: string | 'best' | 'newest' | 'oldest' | 'relevance';
+  sort?: SortType;
   page?: number;
   begin_date?: string; // format: YYYYMMDD
   end_date?: string;
